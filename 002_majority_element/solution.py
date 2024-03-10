@@ -2,17 +2,21 @@ import typing
 
 class Solution:
     def majority_element(self, nums: typing.List[int]) -> int:
+        # this solution consists of two O(n) computations and uses O(n) memory
+
+        # constructing `counter` is O(n)
         counter = {}
         for num in nums:
             if num not in counter:
                 counter[num] = 0
             else:
                 counter[num] += 1
-        # an equivalent way to produce `counter` would be
+        # an equivalent way to produce `counter` (also O(n)) would be
         # 
         #     import collections
         #     counter = collections.Counter(nums)        
 
+        # O(n) operation to find the maximum
         return max(counter.keys(), key=counter.get)
     
 
