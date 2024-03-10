@@ -11,7 +11,6 @@
   ],
   "rewrap.wrappingColumn": 99,
   "workbench.editorAssociations": {   
-    "*.md": "vscode.markdown.preview.editor",
-}
-
+      "*.md": "vscode.markdown.preview.editor",
+  }
 }
