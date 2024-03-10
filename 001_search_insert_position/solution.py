@@ -1,5 +1,6 @@
 import typing
 
+
 class Solution:
     def search_insert(self, nums: typing.List[int], target: int) -> int:
         left = 0
@@ -24,11 +25,12 @@ class Solution:
         # between the elements indicated by `right` and `left` test
         return left
 
+
 if __name__ == "__main__":
     solution = Solution()
 
-    assert solution.search_insert([1,3,5,6], 5) == 2
-    assert solution.search_insert([1,3,5,6], 2) == 1
-    assert solution.search_insert([1,3,5,6], 7) == 4
+    assert solution.search_insert([1, 3, 5, 6], 5) == 2
+    assert solution.search_insert([1, 3, 5, 6], 2) == 1
+    assert solution.search_insert([1, 3, 5, 6], 7) == 4
 
     print("Simple test cases passed!")
