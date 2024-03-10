@@ -3,14 +3,9 @@
     "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnSave": true
   },
-  "black-formatter.args": [
-    "--line-length",
-    "99",
-    "--skip-string-normalization",
-    "--skip-trailing-comma"
-  ],
+  "black-formatter.args": ["--line-length", "99", "-S", "-C"],
   "rewrap.wrappingColumn": 99,
-  "workbench.editorAssociations": {   
-      "*.md": "vscode.markdown.preview.editor",
+  "workbench.editorAssociations": {
+    "*.md": "vscode.markdown.preview.editor"
   }
 }
