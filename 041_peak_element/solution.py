@@ -8,7 +8,7 @@ class Solution:
 
         while left < right:
 
-            mid = int((left + right) / 2)
+            mid = (left + right) // 2
             # we are on an "upward slope"
             if nums[mid] < nums[mid + 1]:
                 # peak must be to the right; since `mid` is less than the element to the right, we

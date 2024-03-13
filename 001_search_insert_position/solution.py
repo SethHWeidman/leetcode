@@ -8,7 +8,7 @@ class Solution:
 
         while left <= right:
             # use `round` to ensure `pivot` is an `int`
-            pivot = int((left + right) / 2)
+            pivot = (left + right) // 2
             pivot_value = nums[pivot]
             if target == pivot_value:
                 return pivot
