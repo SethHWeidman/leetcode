@@ -2,15 +2,15 @@ import typing
 
 
 class Solution(object):
-    def max_profit(self, s: typing.List[int]) -> int:
+    def max_profit(self, prices: typing.List[int]) -> int:
         # it turns out, the algorithm can simply be: if the price went up the day after the current
         # day, buy
-        s_index = 0
+        prices_index = 0
         profit = 0
-        while s_index < len(s) - 1:
-            if s[s_index] < s[s_index + 1]:
-                profit += s[s_index + 1] - s[s_index]
-            s_index += 1
+        while prices_index < len(prices) - 1:
+            if prices[prices_index] < prices[prices_index + 1]:
+                profit += prices[prices_index + 1] - prices[prices_index]
+            prices_index += 1
         return profit
 
 
