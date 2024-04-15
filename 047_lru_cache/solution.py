@@ -78,6 +78,38 @@ class LRUCache:
             del self.cache[first_node.key]
 
 
+'''
+Note: the following is an implementation that uses `collections.OrderedDict`s, which keep track of
+insertion order and allow you to pop off the front and the back, and insert keys onto the back
+automatically.
+
+  import collections
+
+  class LRUCache:
+
+      def __init__(self, capacity: int):
+          self.cache = collections.OrderedDict()
+          self.capacity = capacity
+
+      def get(self, key: int) -> int:
+          if key not in self.cache:
+              return -1
+          
+          # move the key to the end to show that it was recently used
+          self.cache.move_to_end(key)
+          return self.cache[key]
+
+      def put(self, key: int, value: int) -> None:
+          if key in self.cache:
+              # remove the old value
+              self.cache.pop(key)
+          elif len(self.cache) >= self.capacity:
+              # remove the least recently used item
+              self.cache.popitem(last=False)
+          # Insert the new key-value pair
+          self.cache[key] = value
+'''
+
 if __name__ == "__main__":
 
     assert run_lru_cache(
