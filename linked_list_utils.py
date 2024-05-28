@@ -7,3 +7,6 @@ class ListNode:
         self.val = val
         self.next: ListNode = None
         self.prev: ListNode = None
+
+
+LinkedListHead = typing.Optional[ListNode]
