@@ -1,5 +1,3 @@
-import typing
-
 import linked_list_utils
 
 
