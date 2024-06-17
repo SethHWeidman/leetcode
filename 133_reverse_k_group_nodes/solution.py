@@ -1,41 +1,4 @@
-import typing
-
 import linked_list_utils
-
-
-def create_linked_list(elements: typing.List[int]) -> linked_list_utils.LinkedListHead:
-    """
-    Function to create a linked list from a list of elements.
-    :param elements: List[int] containing elements to be added to the linked list
-    :return: The head of the linked list
-    """
-    if not elements:
-        return None
-
-    # Create the head of the linked list
-    head = linked_list_utils.ListNode(elements[0])
-    current = head
-
-    # Iterate over the remaining elements and append them to the linked list
-    for value in elements[1:]:
-        current.next = linked_list_utils.ListNode(value)
-        current = current.next
-
-    return head
-
-
-def linked_list_to_list(head: linked_list_utils.LinkedListHead) -> typing.List[int]:
-    """
-    Function to convert a linked list back to a Python list.
-    :param head: ListNode representing the head of the linked list
-    :return: List[int] containing the values from the linked list
-    """
-    result = []
-    current = head
-    while current:
-        result.append(current.key)
-        current = current.next
-    return result
 
 
 class Solution:
@@ -91,16 +54,16 @@ class Solution:
 if __name__ == "__main__":
     s = Solution()
 
-    assert linked_list_to_list(
-        s.reverse_k_group_nodes(create_linked_list([1, 2, 3, 4, 5]), 2)
+    assert linked_list_utils.linked_list_to_list(
+        s.reverse_k_group_nodes(linked_list_utils.list_to_linked_list([1, 2, 3, 4, 5]), 2)
     ) == [2, 1, 4, 3, 5]
 
-    assert linked_list_to_list(
-        s.reverse_k_group_nodes(create_linked_list([1, 2, 3, 4, 5]), 3)
+    assert linked_list_utils.linked_list_to_list(
+        s.reverse_k_group_nodes(linked_list_utils.list_to_linked_list([1, 2, 3, 4, 5]), 3)
     ) == [3, 2, 1, 4, 5]
 
-    assert linked_list_to_list(
-        s.reverse_k_group_nodes(create_linked_list([1, 2, 3, 4, 5]), 1)
+    assert linked_list_utils.linked_list_to_list(
+        s.reverse_k_group_nodes(linked_list_utils.list_to_linked_list([1, 2, 3, 4, 5]), 1)
     ) == [1, 2, 3, 4, 5]
 
     print("Test cases passed!")
