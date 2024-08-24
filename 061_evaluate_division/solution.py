@@ -28,7 +28,12 @@ class Solution:
             for neighbor in graph[start]:
                 if neighbor not in visited:
                     result = _depth_first_search_product(neighbor, end, visited)
-                    return result * graph[start][neighbor]
+                    if result != -1.0:
+                        return result * graph[start][neighbor]
+
+            # this condition will be hit if all the neighbors of `start` are in `visited` - that
+            # is, we are at a "dead end"
+            return -1.0
 
         answers = []
         for numer, denom in queries:
@@ -61,4 +66,10 @@ if __name__ == "__main__":
         [["a", "b"]], [0.5], [["a", "b"], ["b", "a"], ["a", "c"], ["x", "y"]]
     ) == [0.5, 2.0, -1.0, -1.0]
 
-    print("Test cases passed!")
+    assert s.calc_equation(
+        [["x1", "x2"], ["x2", "x3"], ["x3", "x4"], ["x4", "x5"]],
+        [3.0, 4.0, 5.0, 6.0],
+        [["x1", "x5"], ["x5", "x2"], ["x2", "x4"], ["x2", "x2"], ["x2", "x9"], ["x9", "x9"]],
+    ) == [360.0, 0.008333333333333333, 20.0, 1.0, -1.0, -1.0]
+
+    print("All test cases passed!")
