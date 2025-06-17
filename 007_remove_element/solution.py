@@ -6,11 +6,12 @@ class Solution:
         swap_index = len(nums) - 1
         index = 0
         while swap_index >= index:
-            while nums[index] == val:  # swapperoo
+            if nums[index] == val:  # swapperoo
                 nums[swap_index], nums[index] = nums[index], nums[swap_index]
                 swap_index -= 1
-            index += 1
-        return index, nums
+            else:
+                index += 1
+        return index
 
 
 if __name__ == "__main__":

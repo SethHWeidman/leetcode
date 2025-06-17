@@ -1,4 +1,4 @@
-class Solution(object):
+class Solution:
     def is_subsequence(self, s: str, t: str) -> bool:
         # The idea here is:
         # Suppose the characters of `s` are "a", b, c, etc.

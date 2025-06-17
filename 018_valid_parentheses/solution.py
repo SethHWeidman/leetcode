@@ -7,7 +7,7 @@ class Solution:
         for char in s:
             if char not in lookup:  # `char` is a "start paren"
                 stack.append(char)
-            else:  # `char` is a "start paren"
+            else:  # `char` is not a "start paren"
                 if len(stack) == 0:
                     return False
                 last_paren = stack.pop()

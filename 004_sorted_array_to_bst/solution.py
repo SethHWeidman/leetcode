@@ -1,6 +1,6 @@
 import typing
 
-from leetcode import tree_utils
+import tree_utils
 
 
 class Solution:

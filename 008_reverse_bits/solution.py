@@ -16,7 +16,7 @@
 class Solution:
     def reverse_bits(self, n: int) -> int:
         new = 0
-        for _ in range(32):  # guaranteed to be the lenght of `n`
+        for _ in range(32):  # guaranteed to be the length of `n`
             rightmost_bit = n & 1
             new <<= 1
             new |= rightmost_bit

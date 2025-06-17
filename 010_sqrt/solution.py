@@ -1,24 +1,21 @@
 class Solution:
     def my_sqrt(self, x: int) -> int:
-        if x < 2:
+        if x < 2:  # 0 and 1 are their own roots
             return x
         left = 0
-        right = x // 2
+        right = x // 2  # √x < x / 2 for x ≥ 4
+        ans = 1
 
         # binary search between 0 and x // 2
-        while left < right:
-            mid = left + (right - left) // 2
-            sq = mid**2
-            sq_plus_one = (mid + 1) ** 2
-            if sq == x:
-                return mid
-            elif sq > x:
-                right = mid
-            elif sq < x:
-                if sq_plus_one > x:
-                    return mid
-                left = mid + 1
-        return left
+        while left <= right:
+            mid = (left + right) // 2
+            sq = mid * mid  # `*` is noticably cheaper than `**`
+            if sq <= x:
+                ans = mid  # mid is still a valid floor-sqrt
+                left = mid + 1  # try something larger
+            else:
+                right = mid - 1  # mid² too big - shrink the range
+        return ans
 
 
 if __name__ == "__main__":
