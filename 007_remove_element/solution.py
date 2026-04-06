@@ -14,7 +14,15 @@ class Solution:
 if __name__ == "__main__":
     s = Solution()
 
-    assert s.remove_element([3, 2, 2, 3], 3) == (2, [2, 2, 3, 3])
-    assert s.remove_element([0, 1, 2, 2, 3, 0, 4, 2], 2) == (5, [0, 1, 4, 0, 3, 2, 2, 2])
+    nums = [3, 2, 2, 3]
+    k = s.remove_element(nums, 3)
+    assert k == 2
+    assert nums[:k] == [2, 2]
+
+    nums = [0, 1, 2, 2, 3, 0, 4, 2]
+    k = s.remove_element(nums, 2)
+    assert k == 5
+    assert 2 not in nums[:k]
+    assert sorted(nums[:k]) == sorted([0, 1, 3, 0, 4])
 
     print("Simple test cases passed!")

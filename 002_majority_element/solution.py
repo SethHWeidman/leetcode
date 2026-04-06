@@ -6,7 +6,7 @@ class Solution:
         counter = {}
         for num in nums:
             if num not in counter:
-                counter[num] = 0
+                counter[num] = 1
             else:
                 counter[num] += 1
         # an equivalent way to produce `counter` (also O(n)) would be
