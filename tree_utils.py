@@ -8,7 +8,7 @@ class TreeNode:
         self.right = right
 
 
-def bst_to_list(root: TreeNode) -> list:
+def tree_to_list(root: TreeNode) -> list:
     # This function performs a level order traversal of the tree.
     # 'None' is used to represent the absence of a node in the level order traversal.
 

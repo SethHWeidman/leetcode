@@ -23,7 +23,7 @@ class Solution:
 if __name__ == "__main__":
     s = Solution()
 
-    assert tree_utils.bst_to_list(s.sorted_array_to_bst([-10, -3, 0, 5, 9])) == [
+    assert tree_utils.tree_to_list(s.sorted_array_to_bst([-10, -3, 0, 5, 9])) == [
         0,
         -3,
         9,
@@ -31,4 +31,4 @@ if __name__ == "__main__":
         None,
         5,
     ]
-    assert tree_utils.bst_to_list(s.sorted_array_to_bst([1, 3])) == [3, 1]
+    assert tree_utils.tree_to_list(s.sorted_array_to_bst([1, 3])) == [3, 1]

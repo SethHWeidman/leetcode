@@ -48,8 +48,8 @@ class Solution(object):
 if __name__ == '__main__':
     s = Solution()
 
-    assert tree_utils.bst_to_list(
+    assert tree_utils.tree_to_list(
         s.tree_from_preorder_inorder([3, 9, 20, 15, 7], [9, 3, 15, 20, 7])
     ) == [3, 9, 20, None, None, 15, 7]
-    assert tree_utils.bst_to_list(s.tree_from_preorder_inorder([-1], [-1])) == [-1]
+    assert tree_utils.tree_to_list(s.tree_from_preorder_inorder([-1], [-1])) == [-1]
     print("Simple test cases passed!")
