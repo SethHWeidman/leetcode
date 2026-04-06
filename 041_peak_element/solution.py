@@ -23,9 +23,6 @@ if __name__ == "__main__":
     solution = Solution()
 
     assert solution.find_peak_element([1, 2, 3, 1]) == 2
-    assert (
-        solution.find_peak_element([1, 2, 1, 3, 5, 6, 4]) == 1
-        or solution.find_peak_element([1, 2, 1, 3, 5, 6, 4]) == 5
-    )
-
+    result = solution.find_peak_element([1, 2, 1, 3, 5, 6, 4])
+    assert result == 1 or result == 5
     print("Simple test cases passed!")
