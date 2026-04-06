@@ -1,7 +1,7 @@
 import tree_utils
 
 
-class Solution(object):
+class Solution:
     def tree_from_preorder_inorder(
         self, preorder: list[int], inorder: list[int]
     ) -> tree_utils.TreeNode:

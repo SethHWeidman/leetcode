@@ -1,4 +1,4 @@
-class Solution(object):
+class Solution:
     def max_profit(self, prices: list[int]) -> int:
         # it turns out, the algorithm can simply be: if the price went up the day after the current
         # day, buy
