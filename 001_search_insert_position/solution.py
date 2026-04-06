@@ -4,7 +4,6 @@ class Solution:
         right = len(nums) - 1
 
         while left <= right:
-            # use `round` to ensure `pivot` is an `int`
             pivot = (left + right) // 2
             pivot_value = nums[pivot]
             if target == pivot_value:
@@ -19,7 +18,7 @@ class Solution:
                 left = pivot + 1
         # if we have reached here, we have right < left (since `left <= right` is `False`). For
         # example, if `right` is 0 and `left` is 1, we want to place the element at 1, that is,
-        # between the elements indicated by `right` and `left` test
+        # between the elements indicated by `right` and `left`
         return left
 
 
