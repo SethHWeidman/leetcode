@@ -8,6 +8,9 @@ class Solution:
         # The `tuple` example in the docs below is most relevant.
         # https://docs.python.org/3/library/heapq.html#basic-examples
 
+        if not nums1 or not nums2 or k <= 0:
+            return []
+
         index_1, index_2 = 0, 0
         length_1, length_2 = len(nums1), len(nums2)
 
@@ -15,7 +18,7 @@ class Solution:
         answer = []
         visited = set((0, 0))
 
-        while k > 0:
+        while heap_queue and k > 0:
             _, (index_1, index_2) = heapq.heappop(heap_queue)
             answer.append([nums1[index_1], nums2[index_2]])
 
@@ -34,6 +37,9 @@ class Solution:
 if __name__ == "__main__":
     solution = Solution()
 
+    assert solution.k_smallest_pairs([], [1, 2, 3], 2) == []
+    assert solution.k_smallest_pairs([1, 2, 3], [], 2) == []
     assert solution.k_smallest_pairs([1, 7, 11], [2, 4, 6], 3) == [[1, 2], [1, 4], [1, 6]]
     assert solution.k_smallest_pairs([1, 1, 2], [1, 2, 3], 2) == [[1, 1], [1, 1]]
+
     print("Simple test cases passed!")
