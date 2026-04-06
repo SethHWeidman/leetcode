@@ -1,8 +1,5 @@
-import typing
-
-
 class Solution:
-    def maximum_sum_circular_subarray(self, nums: typing.List[int]) -> int:
+    def maximum_sum_circular_subarray(self, nums: list[int]) -> int:
         total = 0
         cur_max = 0
         max_sum = float("-inf")

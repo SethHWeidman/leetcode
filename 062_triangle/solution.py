@@ -1,8 +1,5 @@
-import typing
-
-
 class Solution:
-    def minimum_total(self, triangle: typing.List[typing.List[int]]) -> int:
+    def minimum_total(self, triangle: list[list[int]]) -> int:
         for row in range(len(triangle) - 2, -1, -1):
             for column in range(len(triangle[row])):
                 triangle[row][column] += min(

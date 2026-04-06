@@ -1,8 +1,5 @@
-import typing
-
-
 class Solution:
-    def single_number(self, nums: typing.List[int]) -> int:
+    def single_number(self, nums: list[int]) -> int:
         # The naive solution here is:
         #
         #   d = {}

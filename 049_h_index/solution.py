@@ -1,8 +1,5 @@
-import typing
-
-
 class Solution:
-    def h_index(self, citations: typing.List[int]) -> int:
+    def h_index(self, citations: list[int]) -> int:
         # idea: since the h_index can't be greater than the length of the list of `citations`:
         # first create a list where the ith element, indexed from 1, is the number of times that
         # exact number of citations appears; and in the case when the ith element is greater than

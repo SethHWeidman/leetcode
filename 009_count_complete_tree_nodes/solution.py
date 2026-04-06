@@ -1,10 +1,8 @@
-import typing
-
 import tree_utils
 
 
 class Solution:
-    def _get_depth(self, root: typing.Optional[tree_utils.TreeNode]) -> int:
+    def _get_depth(self, root: tree_utils.TreeNode | None) -> int:
         depth = 0
         if root is None:
             return depth
@@ -13,7 +11,7 @@ class Solution:
             depth += 1
         return depth
 
-    def count_nodes(self, root: typing.Optional[tree_utils.TreeNode]) -> int:
+    def count_nodes(self, root: tree_utils.TreeNode | None) -> int:
         # there is a trick to this question that takes advantage of the completeness of the tree
         # and allows you to use recursion
         # if you calculate the depth of the tree by repeatedly "going left", then if the depth of

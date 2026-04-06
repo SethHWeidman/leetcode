@@ -1,13 +1,12 @@
 import collections
-import typing
 
 
-def lists_of_lists_to_set(list1: typing.List[typing.List]) -> typing.Set:
+def lists_of_lists_to_set(list1: list[list]) -> set:
     return set(frozenset(inner_list) for inner_list in list1)
 
 
 class Solution:
-    def group_anagrams(self, strs: typing.List[str]) -> typing.List[typing.List[str]]:
+    def group_anagrams(self, strs: list[str]) -> list[list[str]]:
         str_char_tuple_to_str_dict = collections.defaultdict(list)
 
         for s in strs:

@@ -1,8 +1,5 @@
-import typing
-
-
-class Solution(object):
-    def length_of_LIS(self, nums: typing.List[int]) -> int:
+class Solution:
+    def length_of_LIS(self, nums: list[int]) -> int:
         # a "dynamic programming" solution:
         # `dp` will store the longest increasing subsequence ending at [i]
         dp = [1] * len(nums)

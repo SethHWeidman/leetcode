@@ -1,22 +1,16 @@
 import collections
-import typing
 
 
 class Solution:
     def calc_equation(
-        self,
-        equations: typing.List[typing.List[str]],
-        values: typing.List[float],
-        queries: typing.List[typing.List[str]],
-    ) -> typing.List[int]:
+        self, equations: list[list[str]], values: list[float], queries: list[list[str]]
+    ) -> list[int]:
         graph = collections.defaultdict(dict)
         for (numer, denom), value in zip(equations, values):
             graph[numer][denom] = value
             graph[denom][numer] = 1 / value
 
-        def _depth_first_search_product(
-            start: str, end: str, visited: typing.Optional[typing.Set] = None
-        ):
+        def _depth_first_search_product(start: str, end: str, visited: set | None = None):
             if visited is None:
                 visited = set()
 

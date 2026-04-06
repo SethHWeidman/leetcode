@@ -1,9 +1,8 @@
 import collections
-import typing
 
 
 class Solution:
-    def min_mutation(self, start_gene: str, end_gene: str, bank: typing.List[str]) -> int:
+    def min_mutation(self, start_gene: str, end_gene: str, bank: list[str]) -> int:
         # obvious
         if end_gene not in bank:
             return -1

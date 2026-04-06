@@ -1,8 +1,5 @@
-import typing
-
-
 class Solution:
-    def coin_change(self, coins: typing.List[int], amount: int) -> int:
+    def coin_change(self, coins: list[int], amount: int) -> int:
         # nums_coins will hold, for i = 0 to `amount`, the minimum number of coins it takes to
         # reach `amount`
         nums_coins = [float("inf")] * (amount + 1)

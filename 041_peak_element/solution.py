@@ -1,8 +1,5 @@
-import typing
-
-
 class Solution:
-    def find_peak_element(self, nums: typing.List[int]) -> int:
+    def find_peak_element(self, nums: list[int]) -> int:
         left = 0
         right = len(nums) - 1
 

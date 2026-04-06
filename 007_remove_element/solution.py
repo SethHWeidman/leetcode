@@ -1,8 +1,5 @@
-import typing
-
-
 class Solution:
-    def remove_element(self, nums: typing.List[int], val: int) -> int:
+    def remove_element(self, nums: list[int], val: int) -> int:
         swap_index = len(nums) - 1
         index = 0
         while swap_index >= index:

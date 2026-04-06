@@ -1,8 +1,5 @@
-import typing
-
-
 class Solution:
-    def candy(self, ratings: typing.List[int]) -> int:
+    def candy(self, ratings: list[int]) -> int:
         # this problem can be solved by handling the cases when the ratings are increasing,
         # decreasing, and constant separately
         #

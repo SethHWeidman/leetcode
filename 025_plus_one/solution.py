@@ -1,8 +1,5 @@
-import typing
-
-
 class Solution:
-    def plus_one(self, digits: typing.List[int]) -> typing.List[int]:
+    def plus_one(self, digits: list[int]) -> list[int]:
 
         N = len(digits)
         for i in range(N - 1, -1, -1):

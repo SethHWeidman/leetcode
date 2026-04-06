@@ -1,11 +1,9 @@
-import typing
-
-from leetcode import tree_utils
+import tree_utils
 
 
 class Solution(object):
     def tree_from_preorder_inorder(
-        self, preorder: typing.List[int], inorder: typing.List[int]
+        self, preorder: list[int], inorder: list[int]
     ) -> tree_utils.TreeNode:
         # in general, to construct a tree, we must define:
         #   * how to choose the root node

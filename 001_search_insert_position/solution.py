@@ -1,8 +1,5 @@
-import typing
-
-
 class Solution:
-    def search_insert(self, nums: typing.List[int], target: int) -> int:
+    def search_insert(self, nums: list[int], target: int) -> int:
         left = 0
         right = len(nums) - 1
 

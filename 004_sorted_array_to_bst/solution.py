@@ -1,10 +1,8 @@
-import typing
-
 import tree_utils
 
 
 class Solution:
-    def sorted_array_to_bst(self, nums: typing.List[int]) -> typing.Optional[tree_utils.TreeNode]:
+    def sorted_array_to_bst(self, nums: list[int]) -> tree_utils.TreeNode | None:
         # the key here is to draw things out and realize that selecting the middle element (by
         # index) at each step of the recursion will result in a tree that is height-balanced
         if len(nums) == 0:

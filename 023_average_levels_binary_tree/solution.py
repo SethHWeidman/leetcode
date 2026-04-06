@@ -1,11 +1,10 @@
 import collections
-import typing
 
 import tree_utils
 
 
 class Solution:
-    def average_of_levels(self, root: typing.Optional[tree_utils.TreeNode]) -> typing.List[float]:
+    def average_of_levels(self, root: tree_utils.TreeNode | None) -> list[float]:
         averages = []
 
         queue = collections.deque([root])

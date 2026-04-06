@@ -1,13 +1,10 @@
-import typing
-
 import tree_utils
 
 
 class Solution:
-    def is_symmetric(self, root: typing.Optional[tree_utils.TreeNode]) -> bool:
+    def is_symmetric(self, root: tree_utils.TreeNode | None) -> bool:
         def _trees_equal(
-            root1: typing.Optional[tree_utils.TreeNode],
-            root2: typing.Optional[tree_utils.TreeNode],
+            root1: tree_utils.TreeNode | None, root2: tree_utils.TreeNode | None
         ) -> bool:
             # the trick here is to create a filpp
 

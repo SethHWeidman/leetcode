@@ -1,8 +1,5 @@
-import typing
-
-
 class Solution:
-    def full_justify(self, words: typing.List[str], max_width: int) -> typing.List[str]:
+    def full_justify(self, words: list[str], max_width: int) -> list[str]:
         lines = []
 
         current_line_words_length = 0

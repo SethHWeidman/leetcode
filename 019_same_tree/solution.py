@@ -1,12 +1,8 @@
-import typing
-
 import tree_utils
 
 
 class Solution:
-    def is_same_tree(
-        self, p: typing.Optional[tree_utils.TreeNode], q: typing.Optional[tree_utils.TreeNode]
-    ) -> bool:
+    def is_same_tree(self, p: tree_utils.TreeNode | None, q: tree_utils.TreeNode | None) -> bool:
         if p is None and q is None:
             return True
         if p is None or q is None:

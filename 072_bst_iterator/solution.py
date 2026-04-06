@@ -1,5 +1,3 @@
-import typing
-
 import tree_utils
 
 
@@ -25,7 +23,7 @@ class BSTIterator:
         return len(self.stack) > 0
 
 
-def test_bst_iterator(bst_iterator: BSTIterator, method_calls: typing.List[str]):
+def test_bst_iterator(bst_iterator: BSTIterator, method_calls: list[str]):
     """
     Helper function to test BSTIterator by executing a sequence of method calls and returning their
     outputs.

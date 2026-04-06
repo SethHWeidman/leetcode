@@ -1,8 +1,5 @@
-import typing
-
-
 class Solution:
-    def game_of_life(self, board: typing.List) -> typing.List:
+    def game_of_life(self, board: list) -> list:
         num_rows = len(board)
         num_cols = len(board[0])
 
@@ -33,9 +30,7 @@ class Solution:
 
         return board
 
-    def _get_num_neighbors(
-        self, board: typing.List, max_rows: int, max_cols: int, r: int, c: int
-    ) -> int:
+    def _get_num_neighbors(self, board: list, max_rows: int, max_cols: int, r: int, c: int) -> int:
         cnt = 0
         neighbor_indices = [-1, 0, 1]
         for i in neighbor_indices:

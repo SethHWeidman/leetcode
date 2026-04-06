@@ -1,8 +1,5 @@
-import typing
-
-
 class Solution:
-    def minimum_path_sum(self, grid: typing.List[typing.List[int]]) -> int:
+    def minimum_path_sum(self, grid: list[list[int]]) -> int:
         n_rows = len(grid)
         n_cols = len(grid[0])
         minimum_sums = [[-1] * n_cols for _ in range(n_rows)]

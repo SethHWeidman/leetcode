@@ -1,11 +1,8 @@
 import heapq
-import typing
 
 
 class Solution:
-    def k_smallest_pairs(
-        self, nums1: typing.List[int], nums2: typing.List[int], k: int
-    ) -> typing.List[typing.List[int]]:
+    def k_smallest_pairs(self, nums1: list[int], nums2: list[int], k: int) -> list[list[int]]:
         # The idea to this solution is to use a "Min-heap":
         # https://en.wikipedia.org/wiki/Heap_(data_structure)
         # The `tuple` example in the docs below is most relevant.

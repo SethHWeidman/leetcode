@@ -1,8 +1,5 @@
-import typing
-
-
 class Solution:
-    def max_profit(self, prices: typing.List[int]) -> int:
+    def max_profit(self, prices: list[int]) -> int:
         # we need to keep track of two elements: the `minimum` - because this element provides the
         # most "potential for profit" - and the actual `max_profit`
         minimum = float("inf")

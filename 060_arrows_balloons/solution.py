@@ -1,8 +1,5 @@
-import typing
-
-
 class Solution:
-    def find_min_arrow_shots(self, points: typing.List[typing.List[int]]) -> int:
+    def find_min_arrow_shots(self, points: list[list[int]]) -> int:
 
         points.sort(key=lambda x: x[1])
 

@@ -1,20 +1,14 @@
-import typing
-
-
 # Definition for a binary tree node.
 class TreeNode:
     def __init__(
-        self,
-        val: int = 0,
-        left: typing.Optional['TreeNode'] = None,
-        right: typing.Optional['TreeNode'] = None,
+        self, val: int = 0, left: 'TreeNode' | None = None, right: 'TreeNode' | None = None
     ):
         self.val = val
         self.left = left
         self.right = right
 
 
-def bst_to_list(root: TreeNode) -> typing.List:
+def bst_to_list(root: TreeNode) -> list:
     # This function performs a level order traversal of the tree.
     # 'None' is used to represent the absence of a node in the level order traversal.
 
@@ -44,7 +38,7 @@ def bst_to_list(root: TreeNode) -> typing.List:
     return result
 
 
-def list_to_tree(elements: typing.List[typing.Optional[int]]) -> typing.Optional[TreeNode]:
+def list_to_tree(elements: list[int | None]) -> TreeNode | None:
     if not elements:
         return None  # No elements to convert into a tree
 

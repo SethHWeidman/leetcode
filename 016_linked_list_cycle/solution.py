@@ -1,9 +1,7 @@
-import typing
-
 import linked_list_utils
 
 
-def create_linked_list_with_cycle(nodes: typing.List[int], pos: int) -> linked_list_utils.ListNode:
+def create_linked_list_with_cycle(nodes: list[int], pos: int) -> linked_list_utils.ListNode:
     if not nodes:
         return None
 
@@ -23,7 +21,7 @@ def create_linked_list_with_cycle(nodes: typing.List[int], pos: int) -> linked_l
 
 
 class Solution:
-    def has_cycle(self, head: typing.Optional[linked_list_utils.ListNode]) -> bool:
+    def has_cycle(self, head: linked_list_utils.ListNode | None) -> bool:
         if not head:
             return False
         slow = head

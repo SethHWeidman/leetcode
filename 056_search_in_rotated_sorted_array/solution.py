@@ -1,8 +1,5 @@
-import typing
-
-
 class Solution:
-    def search(self, nums: typing.List[int], target: int) -> int:
+    def search(self, nums: list[int], target: int) -> int:
 
         # low and high indices
         low, high = 0, len(nums) - 1

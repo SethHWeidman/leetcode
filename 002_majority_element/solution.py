@@ -1,8 +1,5 @@
-import typing
-
-
 class Solution:
-    def majority_element(self, nums: typing.List[int]) -> int:
+    def majority_element(self, nums: list[int]) -> int:
         # this solution consists of two O(n) computations and uses O(n) memory
 
         # constructing `counter` is O(n)

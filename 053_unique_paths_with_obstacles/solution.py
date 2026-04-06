@@ -1,8 +1,5 @@
-import typing
-
-
 class Solution:
-    def unique_paths_with_obstacles(self, obstacle_grid: typing.List[typing.List[int]]) -> int:
+    def unique_paths_with_obstacles(self, obstacle_grid: list[list[int]]) -> int:
 
         num_rows = len(obstacle_grid)
         num_cols = len(obstacle_grid[0])

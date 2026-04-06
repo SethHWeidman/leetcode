@@ -1,9 +1,7 @@
-import typing
-
 import linked_list_utils
 
 
-def run_lru_cache(commands: typing.List, arguments: typing.List) -> typing.List:
+def run_lru_cache(commands: list, arguments: list) -> list:
     results = []
     lru_cache = None
 

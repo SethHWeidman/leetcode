@@ -1,13 +1,8 @@
-import typing
-
-
 class Solution:
     def total_n_queens(self, n: int) -> int:
         # https://en.wikipedia.org/wiki/Eight_queens_puzzle
         # Beautiful use of the backtracking method: https://en.wikipedia.org/wiki/Backtracking
-        def backtrack(
-            row: int, columns: typing.Set, diagonals: typing.Set, anti_diagonals: typing.Set
-        ) -> int:
+        def backtrack(row: int, columns: set, diagonals: set, anti_diagonals: set) -> int:
             if row == n:
                 return 1
 

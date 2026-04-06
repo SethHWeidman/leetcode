@@ -1,11 +1,10 @@
 import linked_list_utils
-import typing
 
 
 class Solution:
     def reverse_between(
-        self, head: typing.Optional[linked_list_utils.ListNode], left: int, right: int
-    ) -> typing.Optional[linked_list_utils.ListNode]:
+        self, head: linked_list_utils.ListNode | None, left: int, right: int
+    ) -> linked_list_utils.ListNode | None:
         dummy = linked_list_utils.ListNode(0)
         dummy.next = head
         prev = dummy

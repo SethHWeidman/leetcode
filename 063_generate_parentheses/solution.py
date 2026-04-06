@@ -1,8 +1,5 @@
-import typing
-
-
 class Solution:
-    def generate_parentheses(self, n: int) -> typing.List:
+    def generate_parentheses(self, n: int) -> list:
         results = []
 
         def _backtrack(s: str = '', left: int = 0, right: int = 0) -> None:

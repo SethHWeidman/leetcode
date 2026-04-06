@@ -1,12 +1,9 @@
-import typing
-
-
 class Solution:
-    def permutations(self, nums: typing.List[int]) -> typing.List[typing.List[int]]:
+    def permutations(self, nums: list[int]) -> list[list[int]]:
 
         results = []
 
-        def _backtrack(current: typing.List[int], remaining: typing.List[int]) -> None:
+        def _backtrack(current: list[int], remaining: list[int]) -> None:
             if not remaining:
                 results.append(current[:])  # `results.append(current)` will not work!
                 return

@@ -1,8 +1,5 @@
-import typing
-
-
 class Solution:
-    def three_sum(self, nums: typing.List[int]) -> typing.List[typing.List[int]]:
+    def three_sum(self, nums: list[int]) -> list[list[int]]:
         if not len(nums):
             return []
 

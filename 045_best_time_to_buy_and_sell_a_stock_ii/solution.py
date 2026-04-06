@@ -1,8 +1,5 @@
-import typing
-
-
 class Solution(object):
-    def max_profit(self, prices: typing.List[int]) -> int:
+    def max_profit(self, prices: list[int]) -> int:
         # it turns out, the algorithm can simply be: if the price went up the day after the current
         # day, buy
         prices_index = 0

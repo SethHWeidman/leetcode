@@ -1,11 +1,9 @@
-import typing
-
 import tree_utils
 
 
 class Solution:
     def lowest_common_ancestor(
-        self, root: typing.Optional[tree_utils.TreeNode], p: int, q: int
+        self, root: tree_utils.TreeNode | None, p: int, q: int
     ) -> tree_utils.TreeNode:
         if not root:
             return None

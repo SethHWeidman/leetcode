@@ -1,5 +1,4 @@
 import tree_utils
-import typing
 
 
 class Solution:
@@ -7,11 +6,12 @@ class Solution:
 
         prev_val = [float('-inf')]
 
-        def _validate_in_order(node: typing.Optional[tree_utils.TreeNode]) -> bool:
+        def _validate_in_order(node: tree_utils.TreeNode | None) -> bool:
             # an empty node is valid
             if not node:
                 return True
 
+            # validate "the left branch"
             if not _validate_in_order(node.left):
                 return False
 

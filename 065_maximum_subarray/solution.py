@@ -1,8 +1,5 @@
-import typing
-
-
 class Solution:
-    def max_sub_array(self, nums: typing.List[int]) -> int:
+    def max_sub_array(self, nums: list[int]) -> int:
         max_sum = float("-inf")
         cur_max = float("-inf")
 

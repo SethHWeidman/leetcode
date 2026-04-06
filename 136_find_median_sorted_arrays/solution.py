@@ -1,8 +1,5 @@
-import typing
-
-
 class Solution:
-    def find_median_sorted_arrays(self, nums1: typing.List[int], nums2: typing.List[int]) -> float:
+    def find_median_sorted_arrays(self, nums1: list[int], nums2: list[int]) -> float:
         # the idea for doing this efficiently (without loss of generality, assume `nums1` is the
         # shorter list):
         if len(nums1) > len(nums2):

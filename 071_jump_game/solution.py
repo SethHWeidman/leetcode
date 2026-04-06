@@ -1,8 +1,5 @@
-import typing
-
-
 class Solution:
-    def jumps(self, nums: typing.List[int]) -> int:
+    def jumps(self, nums: list[int]) -> int:
         if len(nums) == 1:
             return 0
 

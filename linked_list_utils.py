@@ -1,6 +1,3 @@
-import typing
-
-
 class ListNode:
     def __init__(self, key: int = -1, val: int = -1):
         self.key = key
@@ -9,10 +6,10 @@ class ListNode:
         self.prev: ListNode = None
 
 
-LinkedListHead = typing.Optional[ListNode]
+LinkedListHead = ListNode | None
 
 
-def linked_list_to_list(head: LinkedListHead) -> typing.List[int]:
+def linked_list_to_list(head: LinkedListHead) -> list[int]:
     """
     Function to convert a linked list back to a Python list.
     :param head: ListNode representing the head of the linked list
@@ -26,7 +23,7 @@ def linked_list_to_list(head: LinkedListHead) -> typing.List[int]:
     return result
 
 
-def list_to_linked_list(elements: typing.List[int]) -> LinkedListHead:
+def list_to_linked_list(elements: list[int]) -> LinkedListHead:
     """
     Function to create a linked list from a list of elements.
     :param elements: List[int] containing elements to be added to the linked list

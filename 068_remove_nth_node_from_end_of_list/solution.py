@@ -1,12 +1,10 @@
-import typing
-
 import linked_list_utils
 
 
 class Solution:
     def remove_nth_node_from_end(
-        self, head: typing.Optional[linked_list_utils.ListNode], n: int
-    ) -> typing.Optional[linked_list_utils.ListNode]:
+        self, head: linked_list_utils.ListNode | None, n: int
+    ) -> linked_list_utils.ListNode | None:
         dummy = linked_list_utils.ListNode(0)
         dummy.next = head
 

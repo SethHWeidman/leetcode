@@ -1,10 +1,5 @@
-import typing
-
-
 class Solution:
-    def search_matrix(
-        self, matrix: typing.Optional[typing.List[typing.List[int]]], target: int
-    ) -> bool:
+    def search_matrix(self, matrix: list[list[int]] | None, target: int) -> bool:
         num_rows = len(matrix)
         num_cols = len(matrix[0])
         total_elements = num_rows * num_cols

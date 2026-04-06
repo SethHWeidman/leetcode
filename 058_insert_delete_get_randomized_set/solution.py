@@ -1,4 +1,4 @@
-import random, typing
+import random
 
 random.seed(240704)
 
@@ -6,7 +6,7 @@ random.seed(240704)
 class RandomizedSet:
     def __init__(self):
         # `self.element_dict` will store a mapping of values to their indices in
-        # `self.element_list` will store the elements themselves
+        # `self.element_list`, which will store the elements themselves
         self.element_dict = {}
         self.element_list = []
 
@@ -55,9 +55,7 @@ class RandomizedSet:
         return random.choice(self.element_list)
 
 
-def test_randomized_set(
-    commands: typing.List[str], arguments: typing.List[typing.List[int]]
-) -> typing.List:
+def test_randomized_set(commands: list[str], arguments: list[list[int]]) -> list:
     obj = None
     results = []
 
