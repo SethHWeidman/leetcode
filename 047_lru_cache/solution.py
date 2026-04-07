@@ -20,13 +20,22 @@ def run_lru_cache(commands: list, arguments: list) -> list:
 
 
 class LRUCache:
+    """
+    LRU Cache using a doubly-linked list + hashmap.
+
+    The list maintains access order. The "tail" end holds the most recently
+    used (MRU) items, and the "head" end holds the least recently used (LRU).
+    """
 
     def __init__(self, capacity: int):
+        # Sentinel nodes — they never hold real data, just mark the boundaries
         self.head = linked_list_utils.ListNode(-1, -1)
         self.tail = linked_list_utils.ListNode(-1, -1)
-        self.cache = {}  # maps keys to nodes
+
+        self.cache = {}  # key -> ListNode, for O(1) lookup by key
         self.capacity = capacity
 
+        # Link sentinels together to form an empty list: tail <-> head
         self.head.prev = self.tail
         self.tail.next = self.head
 
@@ -36,44 +45,48 @@ class LRUCache:
 
         matched_node = self.cache[key]
 
-        # temporarily remove `matched_node`
+        # Move to the MRU position (tail end) since it was just accessed
         self._remove_node(matched_node)
-
-        # move matched node to tail
         self._insert_node_at_tail(matched_node)
 
         return matched_node.val
 
     def put(self, key: int, value: int) -> None:
         if key in self.cache:
+            # Key exists — remove the old node so we can reinsert at MRU position
             node = self.cache[key]
             self._remove_node(node)
-            node.val = value
+            node.val = value  # update to the new value
         else:
+            # Key is new — create a node and register it in the hashmap
             node = linked_list_utils.ListNode(key, value)
             self.cache[key] = node
+
+        # Insert at the MRU end (right after tail sentinel)
         self._insert_node_at_tail(node)
 
     def _remove_node(self, node: linked_list_utils.ListNode) -> None:
+        """Unlink a node from the list by connecting its neighbors to each other."""
         next_node = node.next
         prev_node = node.prev
-        next_node.prev = prev_node
-        prev_node.next = next_node
+        next_node.prev = prev_node  # neighbor closer to tail skips over node
+        prev_node.next = next_node  # neighbor closer to head skips over node
 
     def _insert_node_at_tail(self, node: linked_list_utils.ListNode) -> None:
+        """Insert node right after the tail sentinel, making it the MRU item."""
 
-        old_last_node = self.tail.next
-        self.tail.next = node
-        node.next = old_last_node
-        old_last_node.prev = node
-        node.prev = self.tail
+        old_last_node = self.tail.next  # the previous MRU node
+        self.tail.next = node  # tail now points to the new node
+        node.next = old_last_node  # new node points to the old MRU
+        old_last_node.prev = node  # old MRU's prev now points to new node
+        node.prev = self.tail  # new node links back to tail sentinel
 
+        # If we've exceeded capacity, evict the LRU item (at the head end)
         if len(self.cache) > self.capacity:
-            # remove the node closest to head
-            first_node = self.head.prev
-            self.head.prev = first_node.prev
-            first_node.prev.next = self.head
-            del self.cache[first_node.key]
+            first_node = self.head.prev  # LRU node (closest to head)
+            self.head.prev = first_node.prev  # head skips over LRU node
+            first_node.prev.next = self.head  # LRU's neighbor now points to head
+            del self.cache[first_node.key]  # remove from hashmap too
 
 
 '''
